@@ -2,6 +2,7 @@ package com.cognizant.demo.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Account {
 	private LocalDate created;
 	private LocalDate lastUpdated;
 	private String status;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
 	public Account() {
 		super();
@@ -81,7 +82,5 @@ public class Account {
 	}
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
-	}
-	
-	
+	}	
 }
