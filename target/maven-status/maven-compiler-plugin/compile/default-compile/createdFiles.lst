@@ -5,5 +5,6 @@ com\cognizant\demo\model\Customer.class
 com\cognizant\demo\util\DataLoader.class
 com\cognizant\demo\repository\AccountRepository.class
 com\cognizant\demo\CapitalOneServiceApplication.class
+com\cognizant\demo\model\AccountSaveResponse.class
 com\cognizant\demo\model\Account.class
 com\cognizant\demo\model\ErrorResponse.class

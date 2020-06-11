@@ -23,7 +23,6 @@ public class Customer {
 	private LocalDate lastUpdated;
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Customer(String firstName, String lastName, String adresssLine1, String addressLine2, String city,
 			String state, String zipcode, LocalDate created, LocalDate lastUpdated) {
@@ -96,7 +95,5 @@ public class Customer {
 	}
 	public void setLastUpdated(LocalDate lastUpdated) {
 		this.lastUpdated = lastUpdated;
-	}
-	
-	
+	}	
 }
