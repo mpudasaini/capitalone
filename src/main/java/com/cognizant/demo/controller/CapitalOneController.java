@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.cognizant.demo.model.Account;
 import com.cognizant.demo.model.ErrorResponse;
 import com.cognizant.demo.service.AccountService;
 
 @RestController
+@EnableWebMvc
 public class CapitalOneController {
 	
 	private AccountService accountService;

@@ -13,21 +13,21 @@ import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
 
 public class LambdaHandler implements RequestStreamHandler{
 	private static SpringBootLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
-    static {
-        try {
-            handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(CapitalOneServiceApplication.class, "lambda");
-        	handler.activateSpringProfiles("lambda");
-        } catch (ContainerInitializationException e) {
-            // Re-throw the exception to force another cold start
-            e.printStackTrace();
-            throw new RuntimeException("Could not initialize Spring Boot application", e);
-        }
-    }
-	 @Override
-	    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException {
-	        handler.proxyStream(inputStream, outputStream, context);
-	        // just in case it wasn't closed by the mapper
-	        outputStream.close();
-	    }
+	static {
+		try {
+			handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(CapitalOneServiceApplication.class, "lambda");
+		} catch (ContainerInitializationException e) {
+			// Re-throw the exception to force another cold start
+			e.printStackTrace();
+			throw new RuntimeException("Could not initialize Spring Boot application", e);
+		}
+	}
+	
+	@Override
+	public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException {
+		handler.proxyStream(inputStream, outputStream, context);
+		// just in case it wasn't closed by the mapper
+		outputStream.close();
+	}
 
 }
