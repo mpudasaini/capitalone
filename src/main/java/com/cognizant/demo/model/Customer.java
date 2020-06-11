@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Customer {
 	@Id
@@ -19,8 +21,13 @@ public class Customer {
 	private String city;
 	private String state;
 	private String zipcode;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate created;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate lastUpdated;
+	
 	public Customer() {
 		super();
 	}

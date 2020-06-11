@@ -9,22 +9,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Account {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long acctId;
+	
 	private String accountType;
 	private Long accountNumber;
 	private Double balance;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate created;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate lastUpdated;
+	
 	private String status;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
+	
 	public Account() {
 		super();
 	}
+	
 	public Account(String accountType, Long accountNumber, Double balance, LocalDate created, LocalDate lastUpdated,
 			String status, Customer customer) {
 		this.accountType = accountType;
