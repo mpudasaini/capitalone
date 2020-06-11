@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: com.cognizant.demo.LambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: target/spring-boot-lambda-1.0.0-SNAPSHOT.jar
+      CodeUri: target/capital-service-lambda-1.0.0-SNAPSHOT.jar
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60

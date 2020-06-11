@@ -1,6 +1,9 @@
 package com.cognizant.demo.service;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,12 @@ public class AccountService {
 
 	public List<Account> getAllAccounts() {
 		return accountRepo.findAll();
+	}
+
+	public Account getAccountById(Long id) {
+		Optional<Account> optionalAccount = accountRepo.findById(id);
+		optionalAccount.orElseThrow(() -> new EntityNotFoundException("Account with id " + id + " is not found."));
+		return optionalAccount.get();
 	}
 	
 }

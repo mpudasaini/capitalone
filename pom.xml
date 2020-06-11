@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cognizant.demo</groupId>
-	<artifactId>gateway-client</artifactId>
+	<artifactId>capital-service-lambda</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CapitalOneService</name>
 	<description>Demo project for Spring Boot in AWS</description>
@@ -36,11 +36,11 @@
 			<optional>true</optional>
 		</dependency>
 
-		<dependency>
+<!-- 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
